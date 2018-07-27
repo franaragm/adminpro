@@ -16,18 +16,18 @@ export class SettingsService {
   }
 
   saveSettings() {
-    console.log('Guardado en el localStorage');
+    // console.log('Guardado en el localStorage');
     localStorage.setItem('theme_settings', JSON.stringify(this.defaultSettings) );
   }
 
   loadSettings() {
     if(localStorage.getItem('theme_settings')) {
-      console.log('Cargado de localStorage');
+      // console.log('Cargado de localStorage');
       this.defaultSettings = JSON.parse(localStorage.getItem('theme_settings'));
       this.applyTheme(this.defaultSettings.themecolor);
     } else {
       this.applyTheme(this.defaultSettings.themecolor);
-      console.log('Valores por defecto');
+      // console.log('Valores por defecto');
     }
   }
 
